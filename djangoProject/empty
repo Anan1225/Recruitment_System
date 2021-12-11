@@ -1,0 +1,11 @@
+# 基础信息,学校与学历信息,综合能力和笔试测评成绩
+"userid", "username", "city", "telephone", "email", "apply_position", "born_address", "gender", "candidate_remark", "bachelor_school", "master_school", "doctor_school", "major", "degree", "test_score_of_general_ability", "paper_score", "creator", "created_date", "modifed_date", "last_editor",
+
+# 第一轮面试记录
+"first_score", "first_learning_ability", "first_profession_competency", "first_advantage", "first_disadvantage", "first_result", "first_recommend_position", "first_interviewer", "first_remark",
+
+# 第二轮面试结果
+"second_score", "second_learning_ability", "second_profession_competency", "second_pursue_of_excellence", "second_communication_ability", "second_pressure_score", "second_advantage", "second_disadvantage", "second_result", "second_recommend_position", "second_interviewer", "second_remark",
+
+# HR终面
+"HR_score", "HR_responsibility", "verbose_name", "HR_communication_ability", "HR_logic_ability", "HR_potential", "HR_stability", "HR_advantage", "HR_disadvantage", "HR_result", "HR_interviewer", "HR_remark",

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="margin: auto; width: 50%;">
+    <a href="/joblist" style="color: darkturquoise">RETURN</a> <p></p>
+{% if job %}
+    <div class="position_name" >
+        <h2> JOB name:{{ job.job_name }} </h2>
+        Cities:
+        {{ job.city_name }} <p></p>
+    </div>
+    <hr>
+    <div class="position_responsibility" style="width: 600px";>
+        <h3>IOB responsibility:</h3>
+        <pre style="font-size: 16px">{{ job.job_responsibility }}
+        </pre>
+        <p></p>
+    </div><br>
+
+    <hr>
+    <div class="position_requirement" style="width: 600px;">
+        <h3>JOB requirement</h3>
+        <pre style="font-size: 16px">{{ job.job_requirment }}
+        </pre>
+    </div>
+
+    <br>
+
+    <div class="apply_position">
+        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" />
+    </div>
+
+{% else %}
+    <p>Job doesn't exist.</p>
+{% endif %}
+{% endblock %}
+</div>
