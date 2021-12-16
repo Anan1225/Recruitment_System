@@ -20,4 +20,5 @@ from django.conf.urls import include, url
 urlpatterns = [
     url(r"^", include("jobs.urls")),
     path('admin/', admin.site.urls),
+    url('accounts/', include('registration.backends.simple.urls')),
 ]
