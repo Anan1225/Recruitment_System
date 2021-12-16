@@ -1,4 +1,4 @@
-"""recuitment URL Configuration
+"""djangoProject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -20,5 +20,7 @@ from django.conf.urls import include, url
 urlpatterns = [
     url(r"^", include("jobs.urls")),
     path('admin/', admin.site.urls),
-    url('accounts/', include('registration.backends.simple.urls')),
+    url(r"^accounts/", include('registration.backends.simple.urls')),
 ]
+
+# admin.site.site_header = ('BD System')
