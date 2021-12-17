@@ -14,18 +14,6 @@ from django.views.generic.edit import CreateView
 from jobs.forms import ResumeForm
 
 # Create your views here.
-
-# def joblist(request):
-#     job_list = Job.objects.order_by('job_type')
-#     template = loader.get_template('joblist.html')
-#     context = {'job_list':job_list}
-#
-#     for job in job_list:
-#         job.city_name = Cities[job.job_city][1]
-#         job.job_type = JobTypes[job.job_type][1]
-#
-#     return HttpResponse(template.render(context))
-
 def joblist(request):
     job_list = Job.objects.order_by('job_type')
     context =  {'job_list': job_list}
@@ -35,12 +23,14 @@ def joblist(request):
     return render(request, 'joblist.html', context)
 
 def detail(request, job_id):
+    # print('进入这里啦')
     try:
         job = Job.objects.get(pk=job_id)
         job.city_name = Cities[job.job_city][1]
         # logger.info('job retrieved from db :%s' % job_id)
     except Job.DoesNotExist:
         raise Http404("Job does not exist")
+    # print(job.__dict__)
     return render(request, 'job.html', {'job': job})
 
 class ResumeDetailView(DetailView):
@@ -56,7 +46,7 @@ class ResumeCreateView(LoginRequiredMixin, CreateView):
     model = Resume
     fields = ["username", "city", "phone",
         "email", "apply_position", "gender",
-        "bachelor_school", "master_school", "major", "degree", "picture", "attachment",
+        "bachelor_school", "master_school", "major", "degree",
         "candidate_introduction", "work_experience", "project_experience"]
 
 
@@ -69,15 +59,16 @@ class ResumeCreateView(LoginRequiredMixin, CreateView):
 
         return render(request, self.template_name, {'form': form})
 
-    ### 从 URL 请求参数带入默认值
+    # 从 URL 请求参数带入默认值
     def get_initial(self):
         initial = {}
         for x in self.request.GET:
             initial[x] = self.request.GET[x]
         return initial
-
+    # 将简历与当前用户关联
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.applicant = self.request.user
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+

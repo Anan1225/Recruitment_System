@@ -4,12 +4,7 @@ from django.conf import settings
 from jobs import views
 
 urlpatterns = [
-    # # 职位列表
-    # path("joblist/", views.joblist, name="joblist"),
-    # # path('job/<int:job_id>/', views.detail, name='detail'),
-    # url(r"^job/(?P<job_id>\d+)/$", views.detail, name="detail"),
-    # url(r"^$", views.joblist, name="name"),
-    # # path("", views.joblist, name="name"),
+    # 首页
 
     # 职位列表
     path("joblist/", views.joblist, name="joblist"),

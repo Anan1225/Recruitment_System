@@ -44,6 +44,17 @@ INSTALLED_APPS = [
     'jobs',
     'interview'
 ]
+
+#添加registration的环境变量
+# 设为 True，允许用户注册
+REGISTRATION_OPEN = True
+# 设为 True，注册后自动登录
+REGISTRATION_AUTO_LOGIN = True
+# 登录后呈现给用户的页面
+LOGIN_REDIRECT_URL = '/'
+# 未登录以及访问需要验证身份的页面时重定向的页面
+LOGIN_URL = '/accounts/login/'
+
 #  Django项目内中间件
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

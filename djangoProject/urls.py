@@ -18,9 +18,10 @@ from django.urls import path
 from django.conf.urls import include, url
 
 urlpatterns = [
-    url(r"^", include("jobs.urls")),
-    path('admin/', admin.site.urls),
-    url(r"^accounts/", include('registration.backends.simple.urls')),
+    path("", include("jobs.urls")),
+    # url(r"^", include("jobs.urls")),
+    url('admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ]
 
 # admin.site.site_header = ('BD System')

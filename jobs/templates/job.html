@@ -12,8 +12,8 @@
     </div>
     <hr>
     <div class="position_responsibility" style="width: 600px";>
-        <h3>IOB responsibility:</h3>
-        <pre style="font-size: 16px">{{ job.job_responsibility }}
+        <h3>JOB responsibility:</h3>
+        <pre style="font-size: 16px">{{ job.jobs_reponsibility }}
         </pre>
         <p></p>
     </div><br>
@@ -21,14 +21,15 @@
     <hr>
     <div class="position_requirement" style="width: 600px;">
         <h3>JOB requirement</h3>
-        <pre style="font-size: 16px">{{ job.job_requirment }}
+        <pre style="font-size: 16px">{{ job.job_requirement }}
         </pre>
     </div>
 
     <br>
 
     <div class="apply_position">
-        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" />
+{#        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" />#}
+        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" onclick="location.href='/resume/add/?apply_position={{job.job_name}}&city={{job.city_name}}'"/>
     </div>
 
 {% else %}
