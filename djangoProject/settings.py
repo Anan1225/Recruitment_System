@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ja!jg21khlkkz_qoxqdrp7liz6e$$m62+h)x&kb$+^iw%%6yyf
 DEBUG = True
 # 允许访问的服务器内外网 ip
 # 一般不会直接在此处设置，而是使用 Nginx.Tengine网关服务开放项目
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','47.103.204.39']
 
 # Application definition
 # Django项目内安装的应用，创建进程完成后需在末尾处添加
@@ -93,8 +93,14 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # 指定数据库使用，可以自定义路径或更替数据库引擎
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recruitment',
+        'USER': 'root',
+        'PASSWORD': 'c13814245416',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
     }
 }
 
