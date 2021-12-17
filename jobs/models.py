@@ -7,32 +7,32 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 # 使用列表
 JobTypes = [
-    (0, "Technical"),
-    (1, "Product"),
-    (2, "Operations"),
-    (3, "Design")
+    (0, "技术岗"),
+    (1, "产品岗"),
+    (2, "运维岗"),
+    (3, "设计岗")
 ]
 
 Cities = [
-    (0, "Beijing"),
-    (1, "Shanghai"),
-    (2, "Shenzhen"),
-    (3, "Hangzhou"),
-    (4, 'Guangzhou')
+    (0, "北京"),
+    (1, "上海"),
+    (2, "深圳"),
+    (3, "杭州"),
+    (4, '广州')
 ]
 # 候选人学历
 DEGREE_TYPE = ((u'本科', u'本科'), (u'硕士', u'硕士'), (u'博士', u'博士'))
 
 class Job(models.Model):
-    job_type = models.SmallIntegerField(blank=False, choices=JobTypes, verbose_name="JOB type")
-    job_name = models.CharField(max_length=250, blank=False, verbose_name="JOB name")
-    job_city = models.SmallIntegerField(blank=False, choices=Cities, verbose_name="JOB City")
-    jobs_reponsibility = models.TextField(max_length=1024, verbose_name="JOB Reponsibility")
-    job_requirement = models.TextField(max_length=1024, verbose_name="JOB Requirement")
+    job_type = models.SmallIntegerField(blank=False, choices=JobTypes, verbose_name="职位类别")
+    job_name = models.CharField(max_length=250, blank=False, verbose_name="职位名称")
+    job_city = models.SmallIntegerField(blank=False, choices=Cities, verbose_name="工作地点")
+    jobs_reponsibility = models.TextField(max_length=1024, verbose_name="职位职责")
+    job_requirement = models.TextField(max_length=1024, verbose_name="职位要求")
     # 使用外键引用
-    creator = models.ForeignKey(User, verbose_name="Creator", null=True, on_delete=models.SET_NULL)
-    created_date = models.DateTimeField(verbose_name="Created Date", default=datetime.now)
-    modified_date = models.DateTimeField(verbose_name="Modified Date", default=datetime.now)
+    creator = models.ForeignKey(User, verbose_name="创建人", null=True, on_delete=models.SET_NULL)
+    created_date = models.DateTimeField(verbose_name="创建日期", default=datetime.now)
+    modified_date = models.DateTimeField(verbose_name="修改日期", default=datetime.now)
 
 
 class Resume(models.Model):

@@ -21,7 +21,7 @@ urlpatterns = [
     path("", include("jobs.urls")),
     # url(r"^", include("jobs.urls")),
     url('admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]
 
 # admin.site.site_header = ('BD System')
