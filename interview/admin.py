@@ -60,10 +60,10 @@ class CandidateAdmin(admin.ModelAdmin):
     ordering = ("HR_score", "second_score", "first_score")
 
     fieldsets = (
-        (None, {'fields': ("userid", ("username", "city", "telephone"), ("email", "apply_position", "born_address"), ("gender", "candidate_remark"), ("bachelor_school", "master_school", "doctor_school"), ("major", "degree"), ("test_score_of_general_ability", "paper_score"),"last_editor")}),
-        ('First_interview', {'fields': (("first_score", "first_learning_ability", "first_profession_competency"), "first_advantage", "first_disadvantage", "first_result", ("first_recommend_position", "first_interviewer"), "first_remark",)}),
-        ('Second_interview', {'fields': (("second_score", "second_learning_ability", "second_profession_competency"), ("second_pursue_of_excellence", "second_communication_ability", "second_pressure_score"), "second_advantage", "second_disadvantage", "second_result", "second_recommend_position", "second_interviewer", "second_remark",)}),
-        ('HR_interview', {'fields': ("HR_score", ("HR_responsibility", "HR_communication_ability", "HR_logic_ability"), ("HR_potential", "HR_stability"), "HR_advantage", "HR_disadvantage", "HR_result", "HR_interviewer", "HR_remark",)}),
+        ('基本信息', {'fields': ("userid", ("username", "city","telephone"), ("email", "born_address", "gender"), ("apply_position", "candidate_remark"), ("bachelor_school", "master_school", "doctor_school"), ("major", "degree"), ("test_score_of_general_ability", "paper_score"),"last_editor")}),
+        ('初试', {'fields': (("first_score", "first_learning_ability", "first_profession_competency"), "first_advantage", "first_disadvantage", "first_result", ("first_recommend_position", "first_interviewer"), "first_remark",)}),
+        ('复试', {'fields': (("second_score", "second_learning_ability", "second_profession_competency"), ("second_pursue_of_excellence", "second_communication_ability", "second_pressure_score"), "second_advantage", "second_disadvantage", "second_result", "second_recommend_position", "second_interviewer", "second_remark",)}),
+        ('终试', {'fields': ("HR_score", ("HR_responsibility", "HR_communication_ability", "HR_logic_ability"), ("HR_potential", "HR_stability"), "HR_advantage", "HR_disadvantage", "HR_result", "HR_interviewer", "HR_remark",)}),
     )
 
 admin.site.register(Candidate, CandidateAdmin)

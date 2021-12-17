@@ -3,16 +3,16 @@
 {% block content %}
 
 <div style="margin: auto; width: 50%;">
-    <a href="/joblist" style="color: darkturquoise">RETURN</a> <p></p>
+    <a href="/joblist" style="color:#007bff">RETURN</a> <p></p>
 {% if job %}
     <div class="position_name" >
-        <h2> JOB name:{{ job.job_name }} </h2>
-        Cities:
+        <h2> 职位名称：{{ job.job_name }} </h2>
+        工作地点：
         {{ job.city_name }} <p></p>
     </div>
     <hr>
     <div class="position_responsibility" style="width: 600px";>
-        <h3>JOB responsibility:</h3>
+        <h3>职位职责：</h3>
         <pre style="font-size: 16px">{{ job.jobs_reponsibility }}
         </pre>
         <p></p>
@@ -20,7 +20,7 @@
 
     <hr>
     <div class="position_requirement" style="width: 600px;">
-        <h3>JOB requirement</h3>
+        <h3>职位要求：</h3>
         <pre style="font-size: 16px">{{ job.job_requirement }}
         </pre>
     </div>
@@ -28,12 +28,11 @@
     <br>
 
     <div class="apply_position">
-{#        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" />#}
-        <input type="button" style="width: 120px; background-color: lightblue;" value="Apply" onclick="location.href='/resume/add/?apply_position={{job.job_name}}&city={{job.city_name}}'"/>
+        <input type="button" style="width: 120px; background-color: lightblue;" value="申请" onclick="location.href='/resume/add/?apply_position={{job.job_name}}&city={{job.city_name}}'"/>
     </div>
 
 {% else %}
-    <p>Job doesn't exist.</p>
+    <p>职位尚不存在。</p>
 {% endif %}
 {% endblock %}
 </div>
