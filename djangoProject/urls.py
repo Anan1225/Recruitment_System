@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
+from django.utils.translation import gettext as _
 
 urlpatterns = [
     path("", include("jobs.urls")),
@@ -24,4 +25,4 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
 ]
 
-# admin.site.site_header = ('BD System')
+admin.site.site_header = _('小陈科技公司招聘系统')
