@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 from django.contrib import admin
 from interview.models import Candidate
 from django.http import HttpResponse

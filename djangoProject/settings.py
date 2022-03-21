@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 """
 Django settings for djangoProject project.
 
@@ -9,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 # Django项目配置文件
 import os.path
 from pathlib import Path
