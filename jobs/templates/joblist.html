@@ -5,6 +5,7 @@
 {#Welcome dear.#}
 <div style="margin: auto; width: 50%; display: -webkit-flex;display: flex;">
     <div style="flex: 4; ">
+        <div class="align-self-center">
 {% if job_list %}
     <ul>
     {% for job in job_list %}
@@ -15,6 +16,7 @@
     <p> 目前尚无开放职位，下次再来吧。</p>
 
 {% endif %}
+        </div>
     </div>
 <div>
 {% endblock %}
